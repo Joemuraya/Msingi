@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
 
-  const [input, setInput] = useState('Hello');  
+  const [input, setInput] = useState(['']);  
   const [Messages, setMessages]= useState([]);
 
   // console.log(input)
@@ -13,6 +13,7 @@ function App() {
 
 
   const sendMessage = (event) => {
+    event.preventDefault()
     setMessages([...Messages, input]);
     setInput('');
 
@@ -22,20 +23,22 @@ function App() {
     <div className="App">
 
       <h1>Msingi Messager</h1>
+      <form>
+        {/* Input field */}
+        <input
+          value={input}
+          onChange={event => setInput(event.target.value)}
+        />
 
-      {/* Input field */}
-      <input
-        value={input}
-        onChange={event => setInput(event.target.value)}
-      />
+        {/* Button */}
+        <button type='submit' onClick={sendMessage}>Enter Message</button>
 
-      {/* Button */}
-      <button onClick={sendMessage}>Enter Message</button>
+      </form>
 
       {/* Messages */}
       {
         Messages.map(message => (
-        <p>{Messages}</p>
+        <p>{message}</p>
         ))
       }
 
