@@ -1,6 +1,8 @@
 // import React, { component } from 'react';
 import React, { useState } from 'react'
 import './App.css'
+import { Button } from '@material-ui/core';
+
 
 
 function App() {
@@ -31,7 +33,7 @@ function App() {
         />
 
         {/* Button */}
-        <button type='submit' onClick={sendMessage}>Enter Message</button>
+        <button variant type='submit' onClick={sendMessage}>Enter Message</button>
 
       </form>
 
