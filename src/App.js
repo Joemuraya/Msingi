@@ -33,7 +33,7 @@ function App() {
         />
 
         {/* Button */}
-        <button variant type='submit' onClick={sendMessage}>Enter Message</button>
+        <Button variant='contained' color='primary' type='submit' onClick={sendMessage}>Enter Message</Button>
 
       </form>
 
