@@ -1,8 +1,8 @@
 // import React, { component } from 'react';
 import React, { useState } from 'react'
 import './App.css'
-import { Button } from '@material-ui/core';
-
+import { Button, FormControl, InputLabel, Input } from '@material-ui/core';
+import Message from './Message'
 
 
 function App() {
@@ -24,29 +24,25 @@ function App() {
   return (
     <div className="App">
 
-      <h1>Msingi Messager</h1>
+      <h1>Msingi <br /> Messager</h1>
       <form>
         {/* Input field */}
-        <input
-          value={input}
-          onChange={event => setInput(event.target.value)}
-        />
-
-        {/* Button */}
-        <Button variant='contained' color='primary' type='submit' onClick={sendMessage}>Enter Message</Button>
+        <FormControl>
+          <InputLabel>Enter a message...</InputLabel>
+          <Input value={input} onChange={event => setInput(event.target.value)} />
+          <Button disabled={!input} variant='contained' color='primary' type='submit' onClick={sendMessage}>Send Message</Button>
+        </FormControl>
 
       </form>
 
-      {/* Messages */}
       {
         Messages.map(message => (
-        <p>{message}</p>
-        ))
+          <Message text={message} />
+      
+        ))  
       }
-
     </div>
-  
-  )
+  );
 }
 
 export default App
