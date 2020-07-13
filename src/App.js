@@ -9,6 +9,7 @@ function App() {
     {username: 'Joe', text: 'Love to code'},
     {username: 'max', text: 'in the moment'}
   ]);
+
   const [username, setUsername]= useState('');
 
   useEffect(() => {
@@ -31,8 +32,8 @@ function App() {
   return (
     <div className="App">
 
-      <h1>Msingi <br /> Messager</h1>
-      <h2>welcome { username }</h2>
+      <h1>Msingi Messager</h1>
+      {/* <h2>welcome { username }</h2> */}
 
       <form>
         {/* Input field */}
